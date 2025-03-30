@@ -47,7 +47,7 @@ Jobly is a **RESTful API** that serves as the backend for a job board applicatio
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Backend**: Express.js, Node.js
 - **Database**: PostgreSQL
@@ -58,7 +58,7 @@ Jobly is a **RESTful API** that serves as the backend for a job board applicatio
 
 ---
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 Ensure you have **Node.js**, **PostgreSQL**, and **npm** installed.
