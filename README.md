@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Jobly API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Jobly is a **RESTful API** that serves as the backend for a job board application, allowing users to search for jobs, manage applications, and handle authentication securely using JWT tokens. This API follows best practices in authentication, authorization, and testing, ensuring a robust and developer-friendly experience.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Authentication & Authorization**: Secure login with JWT tokens.
+- **User Roles**: Admin and regular user access control.
+- **Job Listings**: Search, create, update, and delete job postings.
+- **Company Management**: View company details and associated job postings.
+- **User Profiles**: Manage user accounts and job applications.
+- **Test Coverage**: Comprehensive unit and integration tests for models and routes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## API Endpoints
 
-### `npm test`
+### **Authentication**
+- `POST /auth/token` - Login and receive a JWT token.
+- `POST /auth/register` - Register a new user.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **Users**
+- `GET /users` - Get all users (Admin only).
+- `GET /users/:username` - Get details of a specific user.
+- `POST /users` - Create a new user (Admin only).
+- `PATCH /users/:username` - Update a user (Admin or same user).
+- `DELETE /users/:username` - Delete a user (Admin or same user).
 
-### `npm run build`
+### **Companies**
+- `GET /companies` - Get a list of all companies (supports filtering).
+- `GET /companies/:handle` - Get details of a specific company.
+- `POST /companies` - Create a new company (Admin only).
+- `PATCH /companies/:handle` - Update a company (Admin only).
+- `DELETE /companies/:handle` - Delete a company (Admin only).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Jobs**
+- `GET /jobs` - Get a list of all job postings (supports filtering).
+- `GET /jobs/:id` - Get details of a specific job.
+- `POST /jobs` - Create a new job (Admin only).
+- `PATCH /jobs/:id` - Update a job (Admin only).
+- `DELETE /jobs/:id` - Delete a job (Admin only).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Job Applications**
+- `POST /users/:username/jobs/:id` - Apply for a job (Authenticated users).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠️ Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Backend**: Express.js, Node.js
+- **Database**: PostgreSQL
+- **Authentication**: JWT (JSON Web Token)
+- **Validation**: JSON Schema
+- **Security**: Bcrypt, CORS
+- **Logging**: Morgan
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📦 Installation & Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
+Ensure you have **Node.js**, **PostgreSQL**, and **npm** installed.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Steps
+`git clone https://github.com/katiejnete/react-jobly-frontend.git`  
+`cd react-jobly-frontend`  
+`npm install`  
+`npm start`   
